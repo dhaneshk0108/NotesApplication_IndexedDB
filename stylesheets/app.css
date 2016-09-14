@@ -1,0 +1,17 @@
+html {
+	margin-top: 2%
+}
+
+.noresize {
+	resize: none;
+}
+
+.note-item-subject, .note-item-delete {
+	cursor: pointer;
+}
+
+.note-item-subject {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

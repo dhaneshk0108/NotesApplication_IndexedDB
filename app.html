@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Project 1</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/app.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+	</head>
+	<body>
+		<!-- Main screen -->
+		<div class="container">
+			<div class="well">
+				<h1>Project 1 - Notes Application using IndexedDB<h1>
+				<h3>Dhanesh kumar</h3>
+			</div>
+			<div id="notifications">
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-sm-11">
+							<h2><span class="glyphicon glyphicon-th-list"></span> My Notes <span class="badge" id="notes-count">0</span></h2>
+						</div>
+						<div class="col-sm-1 text-center">
+							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#create-note">
+								<h2><span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="left" title="Create New Note"></h2>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group" id="notes-list">
+						<h4><small>No notes yet</small></h4>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Modal dialog for creating new note -->
+		<div id="create-note" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-circle"></span>
+						</button>
+						<h4 class="modal-title">Create New Note</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="name">Name:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="name" placeholder="Enter name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="subject">Subject:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="subject" placeholder="Enter subject" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="message">Message:</label>
+								<div class="col-sm-10">
+									<textarea class="form-control noresize" rows="5" id="message" placeholder="Enter message"></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" id="save-note">Save</button>
+						<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<!-- Modal dialog for displaying detailed view -->
+		<div id="view-note" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-circle"></span>
+						</button>
+						<h4 class="modal-title">Detailed Note View</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="detail-id">Id:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" disabled="disabled" id="detail-id" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="detail-name">Name:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" disabled="disabled" id="detail-name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="detail-subject">Subject:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" disabled="disabled" id="detail-subject" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="detail-message">Message:</label>
+								<div class="col-sm-10">
+									<textarea class="form-control noresize" rows="5" disabled="disabled" id="detail-message" ></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="detail-created_at">Created:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" disabled="disabled" id="detail-created_at" ></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" id="delete-note">Delete</button>
+						<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</body>
+</html>
